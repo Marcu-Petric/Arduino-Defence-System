@@ -15,6 +15,31 @@ Consequently, I managed to create an integrated system using both radar and lase
 
 ### Components and Software Used
 
+•	Arduino Uno Rev3 SMD – the microcontroller,
+
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/73116c26-441d-4341-97ea-95eb80104fc4)
+
+•	Ultrasonic Sensor HC-SR04 – for detecting object and the distance to them,
+
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/25d2e0a3-2d87-479c-975e-4567b602b292)
+
+•	Motor Servo SG90 – 5 buc. – for moving the lasers and the ultrasonic sensor,
+
+ ![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/66578fca-2532-41ab-8b46-f0615f38eeb7)
+
+•	Laser Diode – 2 buc. – for "shooting" intruders,
+
+![Uploading image.png…]()
+
+•	Breadboard 830 points – pentru connecting the components to power supply,
+
+![Uploading image.png…]()
+
+•	Power Supply – 5.0V, 2500mA,
+•	Arduino IDE 2.2.1 – software used fo programming the microcontroller,
+•	TinkerCad – web page for designing the circuit diagram.
+
+
 ###  Component Testing
 
 After ensuring the proper functionality of the Arduino microcontroller and configuring the motors for precise positioning, we dedicated efforts to test the ultrasonic sensor. We conducted a detailed investigation into the characteristics and operation of this sensor, subsequently developing a simple code to assess its performance in distance measurements.
@@ -40,6 +65,8 @@ The chosen 5V power supply was selected for compatibility with all components, a
 ### Circuit Schematic
 
 To ensure an efficient and proper implementation of the project, we created an Circuit schematic using the TinkerCad website. We utilized the simulation option to test the integrity of the components and validate the correct functioning of the entire system.
+
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/ad898954-62a4-4e54-8dc7-9d5b272c08f3)
 
 The chosen power supply operates at 5V with a maximum capacity of 2500mA. To assess its adequacy, we calculated the required current based on the technical specifications of individual components in the system. These include:
 
