@@ -29,11 +29,11 @@ Consequently, I managed to create an integrated system using both radar and lase
 
 •	Laser Diode – 2 buc. – for "shooting" intruders,
 
-![Uploading image.png…]()
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/11beb355-7caa-4e85-85e4-aeb0ce908fd3)
 
 •	Breadboard 830 points – pentru connecting the components to power supply,
 
-![Uploading image.png…]()
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/5f745c31-5bf7-4ef5-882f-a064b9bdc602)
 
 •	Power Supply – 5.0V, 2500mA,
 •	Arduino IDE 2.2.1 – software used fo programming the microcontroller,
