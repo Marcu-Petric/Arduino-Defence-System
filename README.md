@@ -80,7 +80,19 @@ By summing these values, we obtained the total current required for the operatio
 
 Based on these calculations, we concluded that the 5V power supply is suitable to support the operation of all components in the system, ensuring proper and efficient power supply for the entire system.
 
-### Formular for positioning the laser
+### Formulas for positioning the lasers
+
+#### First case, when the angle of ultrasonic sensor's motor is smaller then 90 &deg.
+
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/d5d834cd-ffe8-47f8-8b0c-ae4f83b2d0a5)
+
+#### Second case, when the angle of ultrasonic sensor's motor is bigger then 90 &deg.
+
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/c5b0ae09-e696-4f01-85cf-cb87bbf2a46a)
+
+#### Third case, when the angle of ultrasonic sensor's motor is exacly then 90 &deg.
+
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/60e04662-db01-43b1-a7e0-4d0520af0edb)
 
 ## Experiments
 
@@ -88,9 +100,9 @@ Based on these calculations, we concluded that the 5V power supply is suitable t
 
 To assess the prototype's efficiency in identifying and "tranquilizing" foreign objects, we conducted experiments focusing on variables such as the number of objects and their distance from the radar. The results were expressed as percentages of correct positioning. Anticipating the outcomes, we formulated expectations based on the following considerations:
 
-Distance from the Radar: We expected the percentage of laser positioning accuracy to increase as objects approached the radar. This is due to the fact that the degree range in which the laser angle will be correctly positioned is larger when objects are in proximity to the radar.
++ Distance from the Radar: We expected the percentage of laser positioning accuracy to increase as objects approached the radar. This is due to the fact that the degree range in which the laser angle will be correctly positioned is larger when objects are in proximity to the radar.
 
-Number of Objects: Considering the limitations of the ultrasonic sensor, we anticipated that it would not detect the object in a single angle but rather in an angle interval depending on the distance from the radar. Consequently, there was a risk of the "giant object" effect when dealing with multiple objects. This means that instead of detecting several separate objects, the sensor might fail to distinguish between them. Therefore, with fewer objects, the accuracy percentage was expected to be higher.
++ Number of Objects: Considering the limitations of the ultrasonic sensor, we anticipated that it would not detect the object in a single angle but rather in an angle interval depending on the distance from the radar. Consequently, there was a risk of the "giant object" effect when dealing with multiple objects. This means that instead of detecting several separate objects, the sensor might fail to distinguish between them. Therefore, with fewer objects, the accuracy percentage was expected to be higher.
 
 ### Experiment Results
 
@@ -103,9 +115,9 @@ The result of the calculations is the one indicated in the respective cells.
 
 | Number of objects / Distance | 10 cm | 20 cm | 30 cm |
 |---------------|----------|-------|-------|
-| One object     | 90%      | 100%  | 80%   |
-| Two objects  | 95%      | 85%   | 80%   |
-| Trei objects  | 90%      | 87%   | 83%   |
+| One object     | 90%      | 100%  | 85%   |
+| Two objects  | 95%      | 90%   | 85%   |
+| Trei objects  | 90%      | 87%   | 87%   |
 
 
 The best percentage was achieved at a distance of 10cm, aligning with our expectations. Despite our initial assumptions, due to the chosen algorithm, the radar successfully differentiated between objects. In the tests involving three objects, similar results were obtained compared to scenarios with two or just one object.
