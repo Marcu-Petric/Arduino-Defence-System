@@ -126,6 +126,8 @@ The result of the calculations is the one indicated in the respective cells.
 | Trei objects  | 90%      | 87%   | 87%   |
 
 
+### Conclusions
+
 The best percentage was achieved at a distance of 10cm, aligning with our expectations. Despite our initial assumptions, due to the chosen algorithm, the radar successfully differentiated between objects. In the tests involving three objects, similar results were obtained compared to scenarios with two or just one object.
 
 ## References
