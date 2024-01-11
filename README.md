@@ -1,6 +1,11 @@
 # Arduino-Defence-System
 This project combines the power of Arduino, radar technology, and lasers to create an innovative system capable of detecting and tracking objects. The radar, mounted on a servo motor, scans a specified range, and lasers are precisely positioned based on detected objects.
 
+## Author
+
+Hotea Alexandra Maria | 2nd Year Automation | Technical University of Cluj-Napoca
+Petric Marcu Cristian | 2nd Year Computer Science | Technical University of Cluj-Napoca
+
 ## Introduction
 
 I happened to stumble upon a documentary that was showcasing the latest applications of radar sensors and laser technologies while exploring cutting-edge technologies. This got me interested in incorporating them into one of my own projects so that I chose Arduino as my starting point.
@@ -82,15 +87,15 @@ Based on these calculations, we concluded that the 5V power supply is suitable t
 
 ### Formulas for positioning the lasers
 
-#### First case, when the angle of ultrasonic sensor's motor is smaller then 90 &deg.
+#### First case, when the angle of ultrasonic sensor's motor is smaller then 90&deg;.
 
 ![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/d5d834cd-ffe8-47f8-8b0c-ae4f83b2d0a5)
 
-#### Second case, when the angle of ultrasonic sensor's motor is bigger then 90 &deg.
+#### Second case, when the angle of ultrasonic sensor's motor is bigger then 90&deg;.
 
 ![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/c5b0ae09-e696-4f01-85cf-cb87bbf2a46a)
 
-#### Third case, when the angle of ultrasonic sensor's motor is exacly then 90 &deg.
+#### Third case, when the angle of ultrasonic sensor's motor is exacly then 90&deg;.
 
 ![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/60e04662-db01-43b1-a7e0-4d0520af0edb)
 
