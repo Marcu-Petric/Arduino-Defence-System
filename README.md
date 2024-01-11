@@ -15,29 +15,29 @@ Consequently, I managed to create an integrated system using both radar and lase
 
 ### Components and Software Used
 
-•	Arduino Uno Rev3 SMD – the microcontroller,
++	Arduino Uno Rev3 SMD – the microcontroller,
 
 ![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/73116c26-441d-4341-97ea-95eb80104fc4)
 
-•	Ultrasonic Sensor HC-SR04 – for detecting object and the distance to them,
++	Ultrasonic Sensor HC-SR04 – for detecting object and the distance to them,
 
 ![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/25d2e0a3-2d87-479c-975e-4567b602b292)
 
-•	Motor Servo SG90 – 5 buc. – for moving the lasers and the ultrasonic sensor,
++	Motor Servo SG90 – 5 buc. – for moving the lasers and the ultrasonic sensor,
 
  ![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/66578fca-2532-41ab-8b46-f0615f38eeb7)
 
-•	Laser Diode – 2 buc. – for "shooting" intruders,
++	Laser Diode – 2 buc. – for "shooting" intruders,
 
 ![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/11beb355-7caa-4e85-85e4-aeb0ce908fd3)
 
-•	Breadboard 830 points – pentru connecting the components to power supply,
++	Breadboard 830 points – pentru connecting the components to power supply,
 
 ![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/5f745c31-5bf7-4ef5-882f-a064b9bdc602)
 
-•	Power Supply – 5.0V, 2500mA,
-•	Arduino IDE 2.2.1 – software used fo programming the microcontroller,
-•	TinkerCad – web page for designing the circuit diagram.
++	Power Supply – 5.0V, 2500mA,
++	Arduino IDE 2.2.1 – software used fo programming the microcontroller,
++	TinkerCad – web page for designing the circuit diagram.
 
 
 ###  Component Testing
@@ -74,13 +74,46 @@ The chosen power supply operates at 5V with a maximum capacity of 2500mA. To ass
 + Five motors, each with a current consumption of 190mA,
 + Two lasers, each with a current consumption of 30mA.
   
- By summing these values, we obtained the total current required for the operation of all components according to the formula:
+By summing these values, we obtained the total current required for the operation of all components according to the formula:
   
-  ![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/98850df1-aa6b-43b9-a0bf-8e7003eb18e6)
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/98850df1-aa6b-43b9-a0bf-8e7003eb18e6)
 
-  Based on these calculations, we concluded that the 5V power supply is suitable to support the operation of all components in the system, ensuring proper and efficient power supply for the entire system.
+Based on these calculations, we concluded that the 5V power supply is suitable to support the operation of all components in the system, ensuring proper and efficient power supply for the entire system.
 
-  
+### Formular for positioning the laser
+
+## Experiments
+
+### Experiment Premise
+
+To assess the prototype's efficiency in identifying and "tranquilizing" foreign objects, we conducted experiments focusing on variables such as the number of objects and their distance from the radar. The results were expressed as percentages of correct positioning. Anticipating the outcomes, we formulated expectations based on the following considerations:
+
+Distance from the Radar: We expected the percentage of laser positioning accuracy to increase as objects approached the radar. This is due to the fact that the degree range in which the laser angle will be correctly positioned is larger when objects are in proximity to the radar.
+
+Number of Objects: Considering the limitations of the ultrasonic sensor, we anticipated that it would not detect the object in a single angle but rather in an angle interval depending on the distance from the radar. Consequently, there was a risk of the "giant object" effect when dealing with multiple objects. This means that instead of detecting several separate objects, the sensor might fail to distinguish between them. Therefore, with fewer objects, the accuracy percentage was expected to be higher.
+
+### Experiment Results
+
+For each cell in the table, we placed the respective number of objects in 10 different ways at the chosen distance. We counted the objects for which one of the lasers was correctly positioned in a complete radar cycle (from 15° to 165° and back to 15°). The result is expressed in percentages according to the formula:
+
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/11f2bde7-04e9-4dd1-98b1-79de30119710)
+
+The result of the calculations is the one indicated in the respective cells.
+
+
+| Number of objects / Distance | 10 cm | 20 cm | 30 cm |
+|---------------|----------|-------|-------|
+| One object     | 90%      | 100%  | 80%   |
+| Two objects  | 95%      | 85%   | 80%   |
+| Trei objects  | 90%      | 87%   | 83%   |
+
+
+The best percentage was achieved at a distance of 10cm, aligning with our expectations. Despite our initial assumptions, due to the chosen algorithm, the radar successfully differentiated between objects. In the tests involving three objects, similar results were obtained compared to scenarios with two or just one object.
+
+## References
+
++ Michael Margolis, _Arduino Cookbook_, second edition (O'Reilly Media, 2011), 
++ Franco P. Preparata, _Michael Ian Shamos_, Computational Geometry, (Springer, 1985).
 
 
 
