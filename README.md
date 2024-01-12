@@ -4,7 +4,7 @@ This project combines the power of Arduino, radar technology, and lasers to crea
 ## Author
 
 Hotea Alexandra Maria | 2nd Year Automation | Technical University of Cluj-Napoca
-
+ 
 Petric Marcu Cristian | 2nd Year Computer Science | Technical University of Cluj-Napoca
 
 ## Introduction
@@ -56,6 +56,10 @@ In the motor testing process, our focus was on aligning them at a reference angl
 
 Each step in component testing aimed not only at ensuring individual functionality but also at guaranteeing efficient interaction between them within the integrated system. These detailed tests played a crucial role in laying the foundation for the subsequent implementation of the control algorithm and ensuring the cohesion of the entire Arduino project with radar and lasers.
 
+For configurating the height of the objects you want to hit, go to the source file on line 20 and swtich the definition of the macro to the wanted height in cm.
+
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/133e2967-6a77-46f0-9810-7281805f6e9a)
+
 ### Solution Description
 
 The proposed solution for the project, aimed at detecting foreign objects and positioning lasers, involves a series of ingenious components and configurations. We mounted the radar on a servo motor to expand its visibility range, allowing it to rotate within a variable angle between 15° and 165°. This approach extends the coverage area of the radar and enhances the system's efficiency in detecting objects from various directions.
@@ -100,6 +104,10 @@ Based on these calculations, we concluded that the 5V power supply is suitable t
 
 ![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/60e04662-db01-43b1-a7e0-4d0520af0edb)
 
+#### Vertical Positioning
+
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/747912cc-7690-4f60-8270-8c9ef889f9f7)
+
 ## Experiments
 
 ### Experiment Premise
@@ -129,6 +137,15 @@ The result of the calculations is the one indicated in the respective cells.
 ### Conclusions
 
 The best percentage was achieved at a distance of 10cm, aligning with our expectations. Despite our initial assumptions, due to the chosen algorithm, the radar successfully differentiated between objects. In the tests involving three objects, similar results were obtained compared to scenarios with two or just one object.
+
+### Error Sources
+
+Several factors contributed to errors in the results:
+
++ The stability of the double-sided tape used to adhere the components together may have been insufficient,
++ The frame, constructed from polystyrene, might have had uneven surfaces,
++ Inaccuracies in measuring distances and heights,
++ Physical limitations of electronic components, such as the precision of the ultransonic sensor.
 
 ## References
 
