@@ -16,7 +16,7 @@
 /** Pinul digital pentru receptorul senzorului cu ultrasunete. */
 #define echo 12
 
-/** Macro pentru a definii înălțimea obiectelor care dorim să le lovim */ 
+/** Macro pentru a definii înălțimea obiectelor pe care dorim să le lovim */ 
 #define H_O 10.0
 
 enum Direction {FORWARD, BACKWARDS};
@@ -88,10 +88,10 @@ void loop() {
     }
     else flag = false;
 
-    // Serial.print(angleRadar); // Sends the current degree into the Serial Port
-    // Serial.print(","); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
-    // Serial.print((int)distance); // Sends the distance value into the Serial Port
-    // Serial.print("."); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+    Serial.print(angleRadar); // Sends the current degree into the Serial Port
+    Serial.print(","); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+    Serial.print((int)distance); // Sends the distance value into the Serial Port
+    Serial.print("."); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
 
     /** Aștem ca toate motoarele să ajungă în poziția setată */
     delay(30); 
@@ -129,10 +129,10 @@ void loop() {
     } 
     else flag = false;
 
-    // Serial.print(angleRadar); // Sends the current degree into the Serial Port
-    // Serial.print(","); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
-    // Serial.print((int)distance); // Sends the distance value into the Serial Port
-    // Serial.print("."); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+    Serial.print(angleRadar); // Sends the current degree into the Serial Port
+    Serial.print(","); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+    Serial.print((int)distance); // Sends the distance value into the Serial Port
+    Serial.print("."); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
 
     /** Aștem ca toate motoarele să ajungă în poziția setată */
     delay(30); 
@@ -245,10 +245,6 @@ void moveLaser(Direction direction){
 
   float distanceFirstLaserToObject = sqrt(b*b + (HL1 - H_O) * (HL1 - H_O)) ;
   float gama = acos((HL1 - H_O) / distanceFirstLaserToObject) * 57.29;
-  Serial.print(b);
-  Serial.print("  ");
-  Serial.print(gama);
-  Serial.print("  ");
   motorVertical.write(180-gama);
 }
 
