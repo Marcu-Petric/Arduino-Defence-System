@@ -4,7 +4,7 @@ This project combines the power of Arduino, radar technology, and lasers to crea
 ## Author
 
 Hotea Alexandra Maria | 2nd Year Automation | Technical University of Cluj-Napoca
-
+ 
 Petric Marcu Cristian | 2nd Year Computer Science | Technical University of Cluj-Napoca
 
 ## Introduction
