@@ -56,6 +56,10 @@ In the motor testing process, our focus was on aligning them at a reference angl
 
 Each step in component testing aimed not only at ensuring individual functionality but also at guaranteeing efficient interaction between them within the integrated system. These detailed tests played a crucial role in laying the foundation for the subsequent implementation of the control algorithm and ensuring the cohesion of the entire Arduino project with radar and lasers.
 
+For configurating the height of the objects you want to hit, go to the source file on line 20 and swtich the definition of the macro to the wanted height in cm.
+
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/133e2967-6a77-46f0-9810-7281805f6e9a)
+
 ### Solution Description
 
 The proposed solution for the project, aimed at detecting foreign objects and positioning lasers, involves a series of ingenious components and configurations. We mounted the radar on a servo motor to expand its visibility range, allowing it to rotate within a variable angle between 15° and 165°. This approach extends the coverage area of the radar and enhances the system's efficiency in detecting objects from various directions.
@@ -99,6 +103,10 @@ Based on these calculations, we concluded that the 5V power supply is suitable t
 #### Third case, when the angle of ultrasonic sensor's motor is exacly then 90&deg;.
 
 ![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/60e04662-db01-43b1-a7e0-4d0520af0edb)
+
+#### Vertical Positioning
+
+![image](https://github.com/Marcu-Petric/Arduino-Defence-System/assets/87765474/747912cc-7690-4f60-8270-8c9ef889f9f7)
 
 ## Experiments
 
