@@ -138,6 +138,15 @@ The result of the calculations is the one indicated in the respective cells.
 
 The best percentage was achieved at a distance of 10cm, aligning with our expectations. Despite our initial assumptions, due to the chosen algorithm, the radar successfully differentiated between objects. In the tests involving three objects, similar results were obtained compared to scenarios with two or just one object.
 
+### Error Sources
+
+Several factors contributed to errors in the results:
+
++ The stability of the double-sided tape used to adhere the components together may have been insufficient,
++ The frame, constructed from polystyrene, might have had uneven surfaces,
++ Inaccuracies in measuring distances and heights,
++ Physical limitations of electronic components, such as the precision of the ultransonic sensor.
+
 ## References
 
 + Michael Margolis, _Arduino Cookbook_, second edition (O'Reilly Media, 2011), 
