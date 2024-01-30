@@ -12,12 +12,11 @@
 
 /** Pinul digital pentru declanșarea senzorului cu ultrasunete. */
 #define trig 13
-
 /** Pinul digital pentru receptorul senzorului cu ultrasunete. */
 #define echo 12
 
 /** Macro pentru a definii înălțimea obiectelor pe care dorim să le lovim */ 
-#define H_O 10.0
+#define H_O 12
 
 enum Direction {FORWARD, BACKWARDS};
 
@@ -43,7 +42,9 @@ bool flag;
 
 bool isFirstLaserUsed;
 
-/** Funcție utilizată pentru specificarea pinilor de control pentru motoare, lasere și ultrasunete, precum și tipul lor (INPUT sau OUTPUT) */
+/** Funcție utilizată pentru specificarea pinilor de control pentru motoare, lasere și ultrasunete, 
+*   precum și tipul lor (INPUT sau OUTPUT) 
+*/
 void setup() {
   motorRadar.attach(11);
   motorVertical.attach(10);
@@ -87,11 +88,14 @@ void loop() {
       } 
     }
     else flag = false;
-
-    Serial.print(angleRadar); // Sends the current degree into the Serial Port
-    Serial.print(","); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
-    Serial.print((int)distance); // Sends the distance value into the Serial Port
-    Serial.print("."); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+    /** Sends the current degree into the Serial Port */ 
+    Serial.print(angleRadar); 
+    /** Sends addition character right next to the previous value needed later in the Processing IDE for indexing */ 
+    Serial.print(",");
+    /** Sends the distance value into the Serial Port */
+    Serial.print((int)distance);
+    /** Sends addition character right next to the previous value needed later in the Processing IDE for indexing */
+    Serial.print("."); 
 
     /** Aștem ca toate motoarele să ajungă în poziția setată */
     delay(30); 
@@ -129,10 +133,14 @@ void loop() {
     } 
     else flag = false;
 
-    Serial.print(angleRadar); // Sends the current degree into the Serial Port
-    Serial.print(","); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
-    Serial.print((int)distance); // Sends the distance value into the Serial Port
-    Serial.print("."); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
+    /** Sends the current degree into the Serial Port */ 
+    Serial.print(angleRadar); 
+    /** Sends addition character right next to the previous value needed later in the Processing IDE for indexing */ 
+    Serial.print(",");
+    /** Sends the distance value into the Serial Port */
+    Serial.print((int)distance);
+    /** Sends addition character right next to the previous value needed later in the Processing IDE for indexing */
+    Serial.print("."); 
 
     /** Aștem ca toate motoarele să ajungă în poziția setată */
     delay(30); 
@@ -178,10 +186,14 @@ int checkRadar(){
 /** Macro pentru a definii distanța măsurată la montare, dintre motorul primului laser și motorul radarului */ 
 #define DIST_L_R 4.5
 
-/** Macro pentru a definii distanța măsurată la montare, dintre motorul celui de al doilea laser și motorul radarului */ 
+/** Macro pentru a definii distanța măsurată la montare, 
+*   dintre motorul celui de al doilea laser și motorul radarului 
+*/ 
 #define DIST_L_R2 10.0
 
-/** Macro pentru a definii distanța măsurată la montare, dintre centrul mecanismului de rotire al motorului laserului, și laserul în sine */ 
+/** Macro pentru a definii distanța măsurată la montare, 
+*   dintre centrul mecanismului de rotire al motorului laserului, și laserul în sine 
+*/ 
 #define DIST_M_L 3.5
 
 /** Macro pentru a definii înălțimea la care se află primul laser */ 
@@ -227,7 +239,7 @@ void moveLaser(Direction direction){
     float beta = acos(a/b) * 57.29;
     float d = sqrt(DIST_M_L * DIST_M_L + b * b - 7 * b * cos ((180 - beta) / 57.29));
     int teta = acos((DIST_M_L+a)/d) * 57.29;
-    motorHorizontal.write(teta);
+    motorHorizontal.write(teta-10);
   }
   else
   {
@@ -240,7 +252,7 @@ void moveLaser(Direction direction){
     float beta= acos((b*b + DIST_L_R * DIST_L_R - distance * distance) / (2 * b * DIST_L_R)) * 57.29;
     float d = sqrt(DIST_M_L * DIST_M_L + b * b - 7 * b * cos ((90 - beta) / 57.29));
     int teta = acos((d*d + DIST_M_L * DIST_M_L - b*b) / (2 * d * DIST_M_L)) * 57.29;
-    motorHorizontal.write(teta-5);
+    motorHorizontal.write(teta);
   }
 
   float distanceFirstLaserToObject = sqrt(b*b + (HL1 - H_O) * (HL1 - H_O)) ;
@@ -257,7 +269,8 @@ void moveSecondLaser(Direction direction){
   digitalWrite(LASER_FIRST, HIGH);
   digitalWrite(LASER_SECOND, HIGH);
 
-  /** În urma testelor am observat că obiectul va fi detectat înainte ca motorul laserului să fie direct pe traictoria obiectului,
+  /** În urma testelor am observat că obiectul va fi detectat 
+  *   înainte ca motorul laserului să fie direct pe traictoria obiectului,
   *   iar unghiul aproximativ este cu 20 de grade mai mare decât unghiul actual al motorului radarului.
   */
   float deviated;
@@ -284,12 +297,12 @@ void moveSecondLaser(Direction direction){
     float beta = acos(a/b) * 57.29;
     float d = sqrt(DIST_M_L * DIST_M_L + b * b - 7 * b * cos ((180 - beta) / 57.29));
     int teta = acos((DIST_M_L+a)/d) * 57.29;
-    motorHorizontal2.write(teta + 8);
+    motorHorizontal2.write(teta);
   }
   else
   {
-    /** în cazul în care obiectul se află în jumătatea stângă a proximității, unghiul detectării va crește cu ÎNCĂ 10 grade din cauză că
-    *   receiverul este mai aproape de obiect.
+    /** în cazul în care obiectul se află în jumătatea stângă a proximității,
+    *   unghiul detectării va crește cu ÎNCĂ 10 grade din cauză că receiverul este mai aproape de obiect.
     */
    if (direction == FORWARD) deviated += 10;
 
@@ -298,7 +311,7 @@ void moveSecondLaser(Direction direction){
     float beta= acos((b*b + DIST_L_R2 * DIST_L_R2 - distance * distance) / (2 * b * DIST_L_R2)) * 57.29;
     float d = sqrt(DIST_M_L * DIST_M_L + b * b - 7 * b * cos ((90 - beta) / 57.29));
     int teta = acos((d*d + DIST_M_L * DIST_M_L - b*b) / (2 * d * DIST_M_L)) * 57.29;
-    motorHorizontal2.write(teta-16);
+    motorHorizontal2.write(teta);
   }
 
   float distanceSecondLaserToObject = sqrt(b*b + (HL2 - H_O) * (HL2 - H_O));
